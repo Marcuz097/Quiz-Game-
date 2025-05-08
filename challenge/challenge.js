@@ -61,25 +61,32 @@ function endChallenge() {
   const resultContainer = document.getElementById("result");
   resultContainer.style.display = "block";
 
-  // Muestra un mensaje dependiendo de cuántas respuestas correctas tuvo
   let message = "¡Felicidades!";
+  const confetti = document.getElementById("confetti");
+  const trophyIcon = document.getElementById("trophyIcon");
+
+
   if (correctAnswers === questions.length) {
     message += " Has ganado el trofeo de primer lugar.";
+    trophyIcon.innerHTML = "🏆"; // Trofeo de primer lugar
+    trophyIcon.id = "trophy1"; // Establecer el estilo de primer lugar
+    confetti.style.display = "block";
   } else if (correctAnswers >= 45) {
     message += " Has ganado el trofeo de segundo lugar.";
+    trophyIcon.innerHTML = "🥈"; // Trofeo de segundo lugar
+    confetti.style.display = "block";
   } else if (correctAnswers >= 40) {
     message += " Has ganado el trofeo de tercer lugar.";
+    trophyIcon.innerHTML = "🥉"; // Trofeo de tercer lugar
+    confetti.style.display = "block";
   } else {
     message += " No obtuviste un trofeo.";
   }
 
-  resultContainer.innerHTML = `
-        <p>${message}</p>
-        <p>Respuestas correctas: ${correctAnswers}</p>
-    `;
-
-  // Redirige de nuevo a la página del desafío después de 3 segundos
-  setTimeout(() => (window.location.href = "/challenge.html"), 3000);
+  document.getElementById("resultMessage").innerText = message;
+  document.getElementById(
+    "resultScore"
+  ).innerText = `Respuestas correctas: ${correctAnswers}`;
 }
 
 // === FUNCIONES AUXILIARES ===
@@ -140,11 +147,16 @@ function answerQuestion(isCorrect) {
     clearInterval(timer); // Detiene el temporizador si falla
     record = Math.max(record, correctAnswers);
     localStorage.setItem("record", record); // Guarda el récord si fue superado
-
-    document.getElementById("questions").style.display = "none";
-    const loseMessage = document.getElementById("loseMessage");
-    loseMessage.style.display = "block";
-    document.getElementById("currentRecord").innerText = correctAnswers;
+    // Si obtuvo al menos 40, se le muestra el resultado final con trofeo
+    if (correctAnswers >= 40) {
+      endChallenge();
+    } else {
+      // Si no calificó a ningún trofeo, se muestra mensaje de pérdida
+      document.getElementById("questions").style.display = "none";
+      const loseMessage = document.getElementById("loseMessage");
+      loseMessage.style.display = "block";
+      document.getElementById("currentRecord").innerText = correctAnswers;
+    }
   } else {
     correctAnswers++;
     currentQuestion++;
