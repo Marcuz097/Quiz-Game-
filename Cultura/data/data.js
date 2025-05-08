@@ -22,7 +22,7 @@ export const data = {
            answer: 'Windsor'
      },
      {
-      question: '¿EN QUÉ AÑO VIAJÓ POR PRIMERA VEZ EL SER HUMANO AL ESPACIO?',
+      question: '¿En que año viajo por primera vez el ser humano al espacio?',
            imageUrl: 'img/13.jpg',
            choices: [
               '1980',
@@ -33,7 +33,7 @@ export const data = {
            answer: '1961'
      },
     {
-      question: '¿COMO SE LLAMA LA MANO DERECHA DE BATMAN?',
+      question: '¿Como se llama la mano derecha de BATMAN?',
          imageUrl: 'img/14.jpeg',
           choices: [
              'Robin',
@@ -44,7 +44,7 @@ export const data = {
           answer: 'Alfred'
     },
     {
-     question: '¿QUÉ FAMOSO LÍDER CUBANO ESTUVO 49 AÑOS EN EL PODER?',
+     question: '¿Que famoso lider CUBANO ESTUVO 49 AÑOS EN EL PODER?',
        imageUrl: 'img/15.jpg',
          choices: [
           'Fidel Castro',
@@ -55,7 +55,7 @@ export const data = {
     answer: 'Fidel Castro'
  },
   {
-      question: 'QUIÉN FUNDÓ ROMA SEGÚN LA LEYENDA?',
+      question: '¿Quien fundo ROMA SEGÚN LA LEYENDA?',
         imageUrl: 'img/16.jpg',
         choices: [
             'Romulo',
@@ -66,7 +66,7 @@ export const data = {
         answer: 'Romulo'
       },
   {
-      question: 'QUIÉN FUE EL PRIMER EMPERADOR ROMANO?',
+      question: '¿Quien fue el primer EMPERADOR ROMANO?',
         imageUrl: 'img/17.jpg',
         choices: [
             'Cesar Augusto',
@@ -77,7 +77,7 @@ export const data = {
         answer: 'Cesar Augusto'
       },
   {
-      question: '¿DÓNDE SE ENCUENTRA LA SAGRADA FAMILIA?',
+      question: '¿Donde se encuentra la SAGRADA FAMILIA?',
         imageUrl: 'img/18.jpg',
         choices: [
             'Barcelona',
@@ -88,7 +88,7 @@ export const data = {
         answer: 'Barcelona'
       },
   {
-      question: '¿CUÁL ES LA CAPITAL DE NICARAGUA?',
+      question: '¿Cual es la Capital de NICARAGUA?',
         imageUrl: 'img/19.jpg',
         choices:[
             'Managua',
@@ -99,7 +99,7 @@ export const data = {
         answer: 'Managua'
       },
   {
-      question: '¿DÓNDE ESTÁ EL TAJ MAHAL?',
+      question: '¿Donde esta el TAJ MAHAL?',
         imageUrl: 'img/20.jpg',
         choices: [
             'En Agra, India. ',
