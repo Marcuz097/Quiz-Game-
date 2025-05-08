@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <!-- TEMPORIZADOR -->
+    <div id="timer" class="timer" style="display: none">Tiempo: 15s</div>
+
+    <!-- CONTENEDOR DEL JUEGO -->
+    <div id="quiz" style="display: none">
+      <h1>Informatica</h1>
+      <hr />
+      <h2 id="question"></h2>
+      <img id="question-image" src="" alt="Imagen de la pregunta" />
+      <div id="choices"></div>
+      <footer>
+        <p class="resultado" id="progress"></p>
+        <div id="progress"></div>
+      </footer>
+    </div>
+
+    <!-- SELECCIÓN DE DIFICULTAD -->
+    <main class="main">
+      <div id="dificultad-container" class="dificultad-container">
+        <h2>Selecciona la dificultad:</h2>
+        <!-- Los botones se insertan desde JS -->
+      </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="./app.js" type="module"></script>
+    <script src="/music.js"></script>
+  </body>
+</html>

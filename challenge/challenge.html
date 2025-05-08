@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Mode</title>
+    <link rel="stylesheet" href="styles/styles1.css">
+</head>
+<body>
+    <!-- Botón de música -->
+    <button id="music-btn">🎵 Activar Música</button>
+    <audio id="bg-music" loop>
+        <source src="music/music.mp3" type="audio/mpeg" />
+        Tu navegador no soporta audio.
+    </audio>
+
+    <!-- Botón de reiniciar récord -->
+    <button id="resetRecord" class="btn-secondary">Reiniciar récord</button>
+
+    <div id="challenge-container">
+        <header>
+            <h1>Challenge</h1>
+            <p id="record">Último récord: 0 preguntas correctas</p>
+        </header>
+        <main>
+            <div id="countdown" class="countdown">3</div>
+            <button id="startChallenge" class="btn-primary">Iniciar</button>
+            <div id="questions" style="display: none;">
+                <!-- Aquí se mostrarán las preguntas -->
+            </div>
+            <div id="loseMessage" style="display: none;">
+                <h2>¡Has perdido!</h2>
+                <p>Lo sentimos, fallaste una pregunta. Respondiste correctamente <span id="currentRecord"></span> preguntas.</p>
+                <button onclick="window.location.href='/index.html'">Reintentar</button>
+            </div>
+            <div id="modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <h2>¡Alerta!</h2>
+                    <p>El récord ha sido reiniciado.</p>
+                    <button id="closeModal" class="btn-primary">Cerrar</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="challenge.js"></script>
+</body>
+</html>

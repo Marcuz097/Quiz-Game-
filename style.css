@@ -1,0 +1,161 @@
+/* Estilos generales para el cuerpo de la página */
+@keyframes backgroundMove {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 10%;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", cursive;
+  background: url("img/1.png") center/cover no-repeat fixed;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  animation: backgroundMove 10s ease-in-out infinite;
+}
+/* Estilo del título principal */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 10px rgba(3, 3, 3, 0.8);
+  padding: 0 1rem;
+  line-height: 1.4;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Contenedor del menú de categorías */
+.menu {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+/* Animación para movimiento flotante */
+@keyframes buttonMove {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* Estilos base para los botones */
+.menu a {
+  background: #111;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+  box-shadow: 0 0 10px #888;
+  animation: buttonMove 10s ease-in-out infinite;
+}
+
+/* Botón de Cultura General - Verde */
+.btn-cultura {
+  color: #dd9333;
+  border: 3px solid #dd9333;
+  box-shadow: 0 0 10px #dd9333;
+}
+
+.btn-cultura:hover {
+  background: #00ff88;
+  color: #111;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+/* Botón de Est. Informático - Rosado */
+.btn-computacion {
+  color: #288dc7;
+  border: 3px solid #288dc7;
+  box-shadow: 0 0 10px #288dc7;
+}
+
+.btn-computacion:hover {
+  background: #ff1867;
+  color: #111;
+  box-shadow: 0 0 20px #ff1867;
+}
+/* Efecto hover sobre los botones */
+.menu a:hover {
+  background: rgb(209, 59, 59);
+  color: #111;
+  box-shadow: 0 0 20px rgb(209, 59, 59);
+}
+/* Estilos del botón de música */
+#music-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  border: 2px solid #444;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #888;
+}
+/* Estilos del botón de ranking */
+#ranking-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #222;
+  color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+  padding: 0.7rem 1.2rem;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff4d4d;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+/* Efecto hover en el botón de ranking */
+#ranking-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff4d4d;
+}
+/* RESPONSIVE: tablets */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+    margin-top: 20px;
+  }
+}
+
+/* RESPONSIVE: móviles pequeños */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+    margin-top: 40px;
+  }
+}

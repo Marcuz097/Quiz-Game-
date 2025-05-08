@@ -1,0 +1,289 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('../img/16.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Contenedor del desafío */
+#challenge-container {
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    backdrop-filter: blur(10px);
+    position: relative; /* Asegura que no afecte a los botones con position: fixed */
+}
+
+/* Header */
+header h1 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Main Content */
+main {
+    margin-top: 20px;
+}
+
+.countdown {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff5722;
+    margin: 20px 0;
+}
+
+/* Botones */
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Efecto de crecimiento en hover */
+}
+
+.btn-primary {
+    background-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Temporizador */
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc3545;
+    margin: 20px 0;
+}
+
+/* Resultados */
+#result {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensaje de pérdida */
+#loseMessage {
+    font-size: 1.2rem;
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+#loseMessage h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#loseMessage p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Botón de reiniciar récord */
+#resetRecord {
+    position: fixed; /* Posición fija respecto a la ventana */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    padding: 12px 30px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#resetRecord:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    position: adsolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s ease;
+}
+
+.modal-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.modal-content button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+/* Botón de música */
+#music-btn {
+    position: fixed; /* Posición fija respecto a la ventana */
+    top: 20px;
+    right: 20px;
+    background: #222;
+    color: #fff;
+    border: 2px solid #444;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #888;
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Asegurar que el fondo ocupe toda la altura de la ventana */
+    background: url('../img/16.webp') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Ajustar la imagen al tamaño de la pantalla */
+}
+
+@keyframes slideDown {
+    0% {
+        top: -100px;
+    }
+    50% {
+        top: 50%; /* Centro de la pantalla */
+    }
+    100% {
+        top: 100%; /* Fuera de la pantalla por la parte inferior */
+    }
+}
+
+/* Estilo base para los botones de respuesta */
+.answer-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover */
+.answer-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Efecto al hacer clic */
+.answer-btn:active {
+    background-color: #003f7f;
+    transform: scale(0.95);
+}
+
+/* Reducir el tamaño del contenedor de preguntas */
+#questions {
+    max-width: 400px; /* Ajusta el ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 10px; /* Espaciado interno */
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+/* Reducir el tamaño de los botones de respuesta */
+.answer-btn {
+    width: 90%; /* Reducir el ancho */
+    margin: 5px auto; /* Espaciado entre botones y centrarlos */
+    padding: 8px; /* Reducir el espaciado interno */
+    font-size: 14px; /* Reducir el tamaño del texto */
+    border-radius: 8px; /* Bordes redondeados */
+}

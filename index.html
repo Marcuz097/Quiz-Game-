@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio del Juego</title>
+     <!-- Fuente retro estilo arcade para el juego -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    /> 
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Título principal del juego -->
+    <h1>¡HOLA!<br />BIENVENIDOS/AS A<br />QUIZ GAME</h1>
+
+    <!-- Menú principal con enlaces a las categorías del juego -->
+    <div class="menu">
+      <!-- Botón para la categoría de Cultura General -->
+      <a href="./Cultura/index1.html" class="btn btn-cultura">Cultura General</a>
+      <!-- Botón para la categoría de Estudio Informático -->
+      <a href="./Computacion/index2.html" class="btn btn-computacion">Est. Informático</a>
+      <!-- Botón para la categoría de Challenge -->
+      <a href="./challenge/challenge.html" class="btn btn-challenge">challenge</a>
+    </div>
+
+        <!-- Boton de audio que contiene la música del juego -->
+    <button id="music-btn">🎵 Activar Música</button>
+    <audio id="bg-music" loop>
+      <source src="THE LAST OF US .mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio.
+    </audio>
+
+      <!-- Botón para mostrar/ocultar el ranking de puntuaciones -->
+    <button id="ranking-btn">🏆 Ranking</button>
+
+    <!-- Contenedor donde se insertará dinámicamente el ranking -->
+    <div id="ranking-container"></div>
+    
+    <script>
+      // Script para controlar la reproducción de música
+      const btn = document.getElementById("music-btn");
+      const music = document.getElementById("bg-music");
+      let playing = false;
+
+      // Al hacer clic en el botón, se reproduce o pausa la música
+      btn.addEventListener("click", () => {
+        if (!playing) {
+          music.play();
+          btn.textContent = "🔇 Detener Música";
+          playing = true;
+        } else {
+          music.pause();
+          btn.textContent = "🎵 Activar Música";
+          playing = false;
+        }
+      });
+
+     // Script para mostrar/ocultar el ranking desde localStorage
+      const rankingBtn = document.getElementById("ranking-btn");
+      const rankingContainer = document.getElementById("ranking-container");
+
+      let rankingVisible = false;
+
+      rankingBtn.addEventListener("click", () => {
+        if (rankingVisible) {
+        // Oculta el ranking si ya está visible
+          rankingContainer.innerHTML = "";
+          rankingVisible = false;
+        } else {
+          // Obtiene los datos del ranking del almacenamiento local
+          const ranking = JSON.parse(localStorage.getItem("quizRanking")) || [];
+          if (ranking.length === 0) {
+            // Muestra mensaje si no hay puntuaciones
+            rankingContainer.innerHTML =
+              "<p style='color:white; text-align:center;'>No hay puntuaciones registradas.</p>";
+          } else {
+            // Crea las filas de la tabla con los datos del ranking
+            const tableRows = ranking
+              .map(
+                (entry, index) => `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${entry.name}</td>
+          <td>${entry.score}</td>
+        </tr>
+      `
+              )
+              .join("");
+
+               // Inserta la tabla completa dentro del contenedor
+            rankingContainer.innerHTML = `
+        <div style="
+          background: #111;
+          color: white;
+          font-family: 'Press Start 2P', cursive;
+          padding: 20px;
+          border-radius: 20px;
+          max-width: 600px;
+          margin: 20px auto;
+          box-shadow: 0 0 20px #ff4d4d;
+        ">
+          <h3 style="color: #ff4d4d; margin-bottom: 20px;">🏆 Ranking de Puntuaciones</h3>
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background-color: #ff1a1a; color: white;">
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Puntaje</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableRows}
+            </tbody>
+          </table>
+        </div>
+      `;
+          }
+          rankingVisible = true;
+        }
+      });
+    </script>    
+  </body>
+</html>
