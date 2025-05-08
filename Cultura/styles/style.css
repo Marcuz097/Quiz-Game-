@@ -1,331 +1,331 @@
 body{
-    background: url('../img/21.gif') no-repeat center center fixed;
-    font-family: 'Press Start 2P', cursive;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 4rem; /* espacio abajo */
+  background: url('../img/21.gif') no-repeat center center fixed;
+  font-family: 'Press Start 2P', cursive;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem; /* espacio abajo */
 }
 #quiz {
-    width: 45rem;
-    padding: 3rem;
-    margin-top: 4rem; /* deja espacio arriba */
-    text-align: center;
+  width: 45rem;
+  padding: 3rem;
+  margin-top: 4rem; /* deja espacio arriba */
+  text-align: center;
 
-    background: rgba(255, 255, 255, 0.01); /* un poco más transparente */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35); /* sombra más suave */
-    backdrop-filter: blur(4px) saturate(160%); /* blur más leve */
-    -webkit-backdrop-filter: blur(4px) saturate(160%);
-    border-radius: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* borde sutil */
-    opacity: 0.9;
+  background: rgba(255, 255, 255, 0.01); /* un poco más transparente */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35); /* sombra más suave */
+  backdrop-filter: blur(4px) saturate(160%); /* blur más leve */
+  -webkit-backdrop-filter: blur(4px) saturate(160%);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* borde sutil */
+  opacity: 0.9;
 }
 
 h1{
-    margin-top: 10px; /* Antes estaba en 40px */
-    margin-bottom: 20px; /* Antes estaba en 40px */
-    display: flex;
-    color: #000000;
-    font-size: 2rem;
-    text-align: center;
-    padding: 2px 0;
+  margin-top: 10px; /* Antes estaba en 40px */
+  margin-bottom: 20px; /* Antes estaba en 40px */
+  display: flex;
+  color: #000000;
+  font-size: 2rem;
+  text-align: center;
+  padding: 2px 0;
 }
 
 #question {
-    font-size: 1.5rem;
-    color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
 }
 
 #question-image{
-    width: 350px;
+  width: 350px;
 }
 
 
 .button {
-    background-color: rgb(82, 147, 169);
-    color: black;
-    width: 250px;
-    font-size: 20px;
-    border-radius: .3rem;
-    padding: 10px 20px;
-    margin: 10px 40px 10px;
-    outline: 0;
-    border-radius: 1rem 1rem;
+  background-color: rgb(82, 147, 169);
+  color: black;
+  width: 250px;
+  font-size: 20px;
+  border-radius: .3rem;
+  padding: 10px 20px;
+  margin: 10px 40px 10px;
+  outline: 0;
+  border-radius: 1rem 1rem;
 }
 .button:hover {
-    cursor: pointer;
-    background: white;
+  cursor: pointer;
+  background: white;
 } 
 
 #progress{
-    font-size: 20px ;
-    align-items: center;
+  font-size: 20px ;
+  align-items: center;
 }
 
 .resultado{
-    color: rgb(236, 229, 229);
-    font-size: large;
+  color: rgb(236, 229, 229);
+  font-size: large;
 }
 
-      /* TEMPORIZADOR */
-      .timer {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #fff;
-        background-color: rgba(255, 0, 0, 0.8);
-        padding: 10px 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px red;
-        font-family: 'Press Start 2P', cursive;
-        animation: pulse 1s infinite;
-        z-index: 10;
+    /* TEMPORIZADOR */
+    .timer {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      background-color: rgba(255, 0, 0, 0.8);
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px red;
+      font-family: 'Press Start 2P', cursive;
+      animation: pulse 1s infinite;
+      z-index: 10;
+    }
+
+    /* ESTILOS GENERALES */
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      font-family: "Segoe UI", sans-serif;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00000055;
+    }
+    #music-button {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      z-index: 20;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: #98c5f9;
+      color: #000;
+      border: 2px solid #444;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #3f88f9;
+      color: white;
+    }
+
+    .ranking-table {
+      margin-top: 20px;
+      text-align: left;
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px #00000030;
+    }
+
+    .ranking-table h2 {
+      text-align: center;
+    }
+
+    .ranking-table ol {
+      padding-left: 20px;
+    }
+
+    .restart-button {
+      margin-top: 20px;
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .restart-button:hover {
+      background-color: #222;
+    }
+
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dificultad-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .dificultad-container h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .btn-nivel {
+      background: linear-gradient(to right, #06beb6, #48b1bf);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .btn-nivel:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #48b1bf, #06beb6);
+    }
+
+    /* ESTILOS POR DIFICULTAD */
+    .btn-facil {
+      background: linear-gradient(135deg, #a8ff78, #78ffd6);
+      color: #003300;
+      box-shadow: 0 0 10px #78ffd6aa;
+      animation: easyPulse 2s infinite;
+    }
+
+    .btn-medio {
+      background: linear-gradient(135deg, #ffe259, #ffa751);
+      color: #663300;
+      box-shadow: 0 0 10px #ffa751aa;
+      animation: mediumGlow 2s infinite;
+    }
+
+    .btn-dificil {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: #fff;
+      box-shadow: 0 0 15px #ff416c88;
+      animation: hardShake 0.5s infinite alternate;
+    }
+
+    /* ANIMACIONES */
+    @keyframes easyPulse {
+      0% { transform: scale(1); box-shadow: 0 0 10px #78ffd6aa; }
+      50% { transform: scale(1.05); box-shadow: 0 0 20px #78ffd6ff; }
+      100% { transform: scale(1); box-shadow: 0 0 10px #78ffd6aa; }
+    }
+
+    @keyframes mediumGlow {
+      0% { box-shadow: 0 0 10px #ffa751aa; }
+      50% { box-shadow: 0 0 20px #ffa751ff; }
+      100% { box-shadow: 0 0 10px #ffa751aa; }
+    }
+
+    @keyframes hardShake {
+      0% { transform: rotate(-1deg); }
+      100% { transform: rotate(1deg); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
       }
 
-      /* ESTILOS GENERALES */
-      .quiz-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        text-align: center;
-        font-family: "Segoe UI", sans-serif;
-        background-color: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        box-shadow: 0 0 10px #00000055;
+      #quiz {
+        width: 95%;
+        margin-top: 2rem;
+        padding: 1.5rem 1rem;
       }
+      
+      #quiz h1 {
+        margin-top: 3rem;
+      }
+
       #music-button {
-        position: absolute;
-        top: 20px;
-        left: 30px;
-        z-index: 20;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        color: white;
+        top: 10px;
+        left: 10px;
+      }
+
+      #question {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      #question-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
       }
 
       .button {
-        margin: 10px;
-        padding: 12px 20px;
-        font-size: 16px;
-        border-radius: 10px;
-        background-color: #98c5f9;
-        color: #000;
-        border: 2px solid #444;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        width: 90%;
+        font-size: 1rem;
+        margin: 0.5rem auto;
+        display: block;
       }
 
-      .button:hover {
-        background-color: #3f88f9;
-        color: white;
-      }
-
-      .ranking-table {
-        margin-top: 20px;
-        text-align: left;
-        background-color: white;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 0 10px #00000030;
-      }
-
-      .ranking-table h2 {
-        text-align: center;
-      }
-
-      .ranking-table ol {
-        padding-left: 20px;
-      }
-
-      .restart-button {
-        margin-top: 20px;
-        background-color: #444;
-        color: white;
-        padding: 10px 20px;
-        font-size: 16px;
+      .timer {
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
         border-radius: 8px;
-        border: none;
-        cursor: pointer;
-      }
-
-      .restart-button:hover {
-        background-color: #222;
-      }
-
-      #header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .dificultad-container {
-        text-align: center;
-        margin-top: 40px;
-      }
-
-      .dificultad-container h2 {
-        font-size: 2rem;
-        color: #fff;
-        margin-bottom: 20px;
+        box-shadow: 0 0 8px red;
       }
 
       .btn-nivel {
-        background: linear-gradient(to right, #06beb6, #48b1bf);
-        border: none;
-        color: white;
-        padding: 12px 24px;
-        margin: 10px;
-        font-size: 1.1rem;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.2s, background 0.3s;
+        width: 90%;
+        margin: 0.5rem auto;
+        font-size: 1rem;
       }
 
-      .btn-nivel:hover {
-        transform: scale(1.05);
-        background: linear-gradient(to right, #48b1bf, #06beb6);
+      .dificultad-container h2 {
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
       }
 
-      /* ESTILOS POR DIFICULTAD */
-      .btn-facil {
-        background: linear-gradient(135deg, #a8ff78, #78ffd6);
-        color: #003300;
-        box-shadow: 0 0 10px #78ffd6aa;
-        animation: easyPulse 2s infinite;
+      .ranking-table {
+        width: 95%;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1rem;
       }
 
-      .btn-medio {
-        background: linear-gradient(135deg, #ffe259, #ffa751);
-        color: #663300;
-        box-shadow: 0 0 10px #ffa751aa;
-        animation: mediumGlow 2s infinite;
+      .timer {
+        font-size: 0.9rem;
+        padding: 4px 10px;
       }
 
-      .btn-dificil {
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
-        color: #fff;
-        box-shadow: 0 0 15px #ff416c88;
-        animation: hardShake 0.5s infinite alternate;
+      .button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
       }
 
-      /* ANIMACIONES */
-      @keyframes easyPulse {
-        0% { transform: scale(1); box-shadow: 0 0 10px #78ffd6aa; }
-        50% { transform: scale(1.05); box-shadow: 0 0 20px #78ffd6ff; }
-        100% { transform: scale(1); box-shadow: 0 0 10px #78ffd6aa; }
+      #question {
+        font-size: 0.9rem;
       }
-
-      @keyframes mediumGlow {
-        0% { box-shadow: 0 0 10px #ffa751aa; }
-        50% { box-shadow: 0 0 20px #ffa751ff; }
-        100% { box-shadow: 0 0 10px #ffa751aa; }
-      }
-
-      @keyframes hardShake {
-        0% { transform: rotate(-1deg); }
-        100% { transform: rotate(1deg); }
-      }
-
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 1.2rem;
-          margin-top: 1rem;
-        }
-
-        #quiz {
-          width: 95%;
-          margin-top: 2rem;
-          padding: 1.5rem 1rem;
-        }
-        
-        #quiz h1 {
-          margin-top: 3rem;
-        }
-
-        #music-button {
-          top: 10px;
-          left: 10px;
-        }
-
-        #question {
-          font-size: 1rem;
-          padding: 0 0.5rem;
-        }
-
-        #question-image {
-          width: 100%;
-          max-width: 300px;
-          height: auto;
-        }
-
-        .button {
-          width: 90%;
-          font-size: 1rem;
-          margin: 0.5rem auto;
-          display: block;
-        }
-
-        .timer {
-          font-size: 1rem;
-          top: 10px;
-          right: 10px;
-          padding: 6px 12px;
-          border-radius: 8px;
-          box-shadow: 0 0 8px red;
-        }
-
-        .btn-nivel {
-          width: 90%;
-          margin: 0.5rem auto;
-          font-size: 1rem;
-        }
-
-        .dificultad-container h2 {
-          font-size: 1.2rem;
-          padding: 0 0.5rem;
-        }
-
-        .ranking-table {
-          width: 95%;
-          font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1rem;
-        }
-
-        .timer {
-          font-size: 0.9rem;
-          padding: 4px 10px;
-        }
-
-        .button {
-          font-size: 0.9rem;
-          padding: 0.6rem;
-        }
-
-        #question {
-          font-size: 0.9rem;
-        }
-      }
+    }
 

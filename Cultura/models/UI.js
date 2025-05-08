@@ -229,13 +229,13 @@ function redireccion() {
   
         // Estructura HTML del ranking
         container.innerHTML = `
-                      <div style="
+                     <div style="
                           background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
                           padding: 30px 40px;
                           border-radius: 20px;
                           max-width: 700px;
                           margin: 30px auto 20px;
-                          box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+                          box-shadow: 0 0 25px rgba(255, 196, 0, 0.7);
                           color: white;
                           font-family: 'Press Start 2P', cursive;
                           text-align: center;
@@ -243,9 +243,9 @@ function redireccion() {
                           animation: fadeInUp 0.6s ease-out;
                       ">
                           <h2 style="
-                              color: #ff4d4d;
+                              color:rgb(255, 154, 77);
                               margin-bottom: 25px;
-                              text-shadow: 0 0 10px #ff1a1a;
+                              text-shadow: 0 0 10px rgb(255, 144, 26);
                           ">🏆 Ranking de Puntuaciones</h2>
           
                           <div style="max-height: 300px; overflow-y: auto;">
@@ -253,11 +253,11 @@ function redireccion() {
                                   width: 100%;
                                   border-collapse: collapse;
                                   background: #111;
-                                  border: 2px solid #ff4d4d;
-                                  box-shadow: 0 0 20px #ff1a1a;
+                                  border: 2px solid rgb(255, 166, 77);
+                                  box-shadow: 0 0 20px rgb(255, 118, 26);
                               ">
                                   <thead>
-                                      <tr style="background: #ff1a1a; color: #fff;">
+                                      <tr style="background:rgb(255, 129, 26); color: #fff;">
                                           <th style="padding: 15px; border-bottom: 2px solid #111;">#</th>
                                           <th style="padding: 15px; border-bottom: 2px solid #111;">Nombre</th>
                                           <th style="padding: 15px; border-bottom: 2px solid #111;">Puntaje</th>
@@ -276,25 +276,25 @@ function redireccion() {
         redirectButton.innerText = "Volver al inicio";
         Object.assign(redirectButton.style, {
           backgroundColor: "#111",
-          color: "#ff4d4d",
-          border: "2px solid #ff4d4d",
+          color: "rgb(255, 136, 77)",
+          border: "2px solid rgb(255, 136, 77)",
           padding: "12px 24px",
           fontSize: "16px",
           borderRadius: "12px",
           cursor: "pointer",
           marginTop: "10px",
-          boxShadow: "0 0 15px #ff4d4d, 0 0 30px #ff1a1a",
+          boxShadow: "0 0 15px rgb(255, 145, 77), 0 0 30px rgb(255, 129, 26)",
           transition: "transform 0.2s, box-shadow 0.2s",
         });
   
         redirectButton.addEventListener("click", redireccion);
         redirectButton.addEventListener("mouseover", () => {
           redirectButton.style.transform = "scale(1.1)";
-          redirectButton.style.boxShadow = "0 0 20px #ff4d4d, 0 0 40px #ff1a1a";
+          redirectButton.style.boxShadow = "0 0 20px rgb(255, 163, 77), 0 0 40px rgb(255, 114, 26)";
         });
         redirectButton.addEventListener("mouseout", () => {
           redirectButton.style.transform = "scale(1)";
-          redirectButton.style.boxShadow = "0 0 15px #ff4d4d, 0 0 30px #ff1a1a";
+          redirectButton.style.boxShadow = "0 0 15px rgb(255, 145, 77), 0 0 30px rgb(255, 95, 26)";
         });
   
         container.appendChild(redirectButton);

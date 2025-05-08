@@ -235,7 +235,7 @@ showChoices(choices, quiz, callback) {
                         border-radius: 20px;
                         max-width: 700px;
                         margin: 30px auto 20px;
-                        box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+                        box-shadow: 0 0 25px rgba(61, 56, 203, 0.7);
                         color: white;
                         font-family: 'Press Start 2P', cursive;
                         text-align: center;
@@ -243,9 +243,9 @@ showChoices(choices, quiz, callback) {
                         animation: fadeInUp 0.6s ease-out;
                     ">
                         <h2 style="
-                            color: #ff4d4d;
+                            color:rgb(83, 77, 255);
                             margin-bottom: 25px;
-                            text-shadow: 0 0 10px #ff1a1a;
+                            text-shadow: 0 0 10px rgb(45, 26, 255);
                         ">🏆 Ranking de Puntuaciones</h2>
         
                         <div style="max-height: 300px; overflow-y: auto;">
@@ -253,11 +253,11 @@ showChoices(choices, quiz, callback) {
                                 width: 100%;
                                 border-collapse: collapse;
                                 background: #111;
-                                border: 2px solid #ff4d4d;
-                                box-shadow: 0 0 20px #ff1a1a;
+                                border: 2px solid rgb(86, 77, 255);
+                                box-shadow: 0 0 20px rgb(26, 26, 255);
                             ">
                                 <thead>
-                                    <tr style="background: #ff1a1a; color: #fff;">
+                                    <tr style="background:rgb(30, 26, 255); color: #fff;">
                                         <th style="padding: 15px; border-bottom: 2px solid #111;">#</th>
                                         <th style="padding: 15px; border-bottom: 2px solid #111;">Nombre</th>
                                         <th style="padding: 15px; border-bottom: 2px solid #111;">Puntaje</th>
@@ -276,25 +276,26 @@ showChoices(choices, quiz, callback) {
       redirectButton.innerText = "Volver al inicio";
       Object.assign(redirectButton.style, {
         backgroundColor: "#111",
-        color: "#ff4d4d",
-        border: "2px solid #ff4d4d",
+        color: "rgb(77, 77, 255)",
+        border: "2px solid rgb(77, 77, 255)",
         padding: "12px 24px",
         fontSize: "16px",
         borderRadius: "12px",
         cursor: "pointer",
         marginTop: "10px",
-        boxShadow: "0 0 15px #ff4d4d, 0 0 30px #ff1a1a",
+        boxShadow: "0 0 15pxrgb(89, 77, 255), 0 0 30px rgb(26, 26, 255)",
         transition: "transform 0.2s, box-shadow 0.2s",
       });
 
+     
       redirectButton.addEventListener("click", redireccion);
       redirectButton.addEventListener("mouseover", () => {
         redirectButton.style.transform = "scale(1.1)";
-        redirectButton.style.boxShadow = "0 0 20px #ff4d4d, 0 0 40px #ff1a1a";
+        redirectButton.style.boxShadow = "0 0 20px rgb(89, 77, 255), 0 0 40px rgb(57, 26, 255)";
       });
       redirectButton.addEventListener("mouseout", () => {
         redirectButton.style.transform = "scale(1)";
-        redirectButton.style.boxShadow = "0 0 15px #ff4d4d, 0 0 30px #ff1a1a";
+        redirectButton.style.boxShadow = "0 0 15px rgb(77, 80, 255), 0 0 30px rgb(26, 45, 255)";
       });
 
       container.appendChild(redirectButton);

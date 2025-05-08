@@ -1,4 +1,5 @@
+// Selecciona el botón con el ID "challengeButton" y le añade un evento al hacer clic
 document.getElementById("challengeButton").addEventListener("click", () => {
-    window.location.href = "challenge.html"; // Redirige a la página del desafío
+    // Cuando se hace clic en el botón, redirige al usuario a la página "challenge.html"
+    window.location.href = "challenge.html";
 });
-

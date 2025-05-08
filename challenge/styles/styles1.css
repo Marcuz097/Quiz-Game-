@@ -1,143 +1,251 @@
-/* General */
+/* Fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* ---------- GENERAL ---------- */
 body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh; /* Para que ocupe toda la altura */
     height: 100vh;
+    text-align: center;
     background: url('../img/16.webp') no-repeat center center fixed;
     background-size: cover;
+    overflow: hidden;
 }
 
-/* Contenedor del desafío */
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
 #challenge-container {
-    margin: 50px auto;
+    margin: 20px auto 40px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    border: 2px solid rgba(0, 0, 0, 0.1);
     max-width: 650px;
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    position: relative; /* Asegura que no afecte a los botones con position: fixed */
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    height: auto; /* El contenedor se adapta al contenido */
+    min-height: 200px; /* Un mínimo de altura para que no quede demasiado pequeño */
 }
 
-/* Header */
+/* ---------- ENCABEZADO ---------- */
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #666;
 }
 
-/* Main Content */
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
 main {
-    margin-top: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Ajusta la altura según el contenido */
 }
 
+/* ---------- CONTADOR ---------- */
 .countdown {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: bold;
     color: #ff5722;
     margin: 20px 0;
+    animation: pulseCountdown 0.8s ease-in-out infinite;
 }
 
-/* Botones */
-button {
-    padding: 12px 25px;
-    margin: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
+/* Animación de pulso */
+@keyframes pulseCountdown {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Efecto de crecimiento en hover */
-}
 
-.btn-primary {
-    background-color: #28a745;
-}
 
-.btn-primary:hover {
-    background-color: #218838;
+/* ---------- BOTÓN MÚSICA ---------- */
+#music-btn {
+    position: fixed; /* cambiado de absolute a fixed */
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: #222;
+    color: #fff;
+    border: 2px solid #444;
+    padding: 0.7rem 1rem;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #888;
 }
-
-/* Temporizador */
-#timer {
-    font-size: 2rem;
+/* ---------- BOTÓN DE INICIO (con animación y diseño atractivo) ---------- */
+#startChallenge {
+    padding: 14px 32px;
+    margin: 20px auto;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #dc3545;
-    margin: 20px 0;
+    color: white;
+    background: linear-gradient(135deg, #ffa751, #f9896b);
+    background-size: 600% 600%;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    animation: gradientMove 6s ease infinite;
+    box-shadow: 0 8px 18px rgba(255, 105, 135, 0.4);
+    transition: transform 0.3s ease;
 }
 
-/* Resultados */
-#result {
-    font-size: 1.3rem;
-    color: #333;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+#startChallenge:hover {
+    transform: scale(1.08);
 }
 
-/* Mensaje de pérdida */
+/* Animación del gradiente */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------- BOTÓN REINICIAR ---------- */
+#resetRecord {
+    position: fixed;
+    bottom: 15px;
+    left: 15px; /* ahora está alineado a la izquierda */
+    z-index: 1000;
+    padding: 14px 32px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#resetRecord:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(255, 65, 108, 0.6);
+}
+
+/* ---------- CONTENEDOR DE PREGUNTAS ---------- */
+#questions {
+    max-width: 420px;
+    margin: 10px auto;
+    padding: 20px;
+    background: rgba(255, 248, 240, 0.95); /* color más suave */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    display: none;
+    animation: fadeIn 0.6s ease-out;
+    width: 100%; /* Asegura que se ajuste a los márgenes */
+    height: auto; /* Se adapta a las preguntas */
+}
+
+/* ---------- BOTONES DE RESPUESTA ---------- */
+.answer-btn {
+    display: block;
+    width: 90%;
+    margin: 12px auto;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #ffa751, #f9896b);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(255, 167, 81, 0.4);
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 137, 107, 0.6);
+
+}
+
+.answer-btn:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(106, 17, 203, 0.6);
+}
+
+.answer-btn:active {
+    transform: scale(0.96);
+}
+#loseMessage button {
+    background: linear-gradient(135deg, #ffb347, #ffcc33); /* naranja claro */
+    color: #222;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(255, 179, 71, 0.5);
+}
+
+#loseMessage button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(255, 204, 51, 0.6);
+}
+
+/* ---------- MENSAJE DE DERROTA ---------- */
 #loseMessage {
     font-size: 1.2rem;
-    color: #dc3545;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
+    background: linear-gradient(135deg, #ff4e63, #ff6189); /* colores más vivos */
+    color: white;
+    border: none;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(255, 78, 99, 0.6);
+    margin-top: 40px;
+    display: none;
+    animation: slideFadeIn 0.8s ease;
 }
 
 #loseMessage h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 #loseMessage p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
-
-/* Botón de reiniciar récord */
-#resetRecord {
-    position: fixed; /* Posición fija respecto a la ventana */
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
-    padding: 12px 30px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
+/* Nueva animación para aparición suave del mensaje */
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-#resetRecord:hover {
-    background-color: #c82333;
-    transform: scale(1.05);
-}
-
-/* Modal */
+/* ---------- MODAL ---------- */
 .modal {
-    position: adsolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -171,23 +279,7 @@ button:hover {
     color: #666;
 }
 
-.modal-content button {
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.modal-content button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Animaciones */
+/* ---------- ANIMACIONES ---------- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -204,86 +296,4 @@ button:hover {
     to {
         transform: translateY(0);
     }
-}
-/* Botón de música */
-#music-btn {
-    position: fixed; /* Posición fija respecto a la ventana */
-    top: 20px;
-    right: 20px;
-    background: #222;
-    color: #fff;
-    border: 2px solid #444;
-    padding: 0.7rem 1rem;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #888;
-    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
-}
-
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Asegurar que el fondo ocupe toda la altura de la ventana */
-    background: url('../img/16.webp') no-repeat center center fixed; /* Imagen de fondo */
-    background-size: cover; /* Ajustar la imagen al tamaño de la pantalla */
-}
-
-@keyframes slideDown {
-    0% {
-        top: -100px;
-    }
-    50% {
-        top: 50%; /* Centro de la pantalla */
-    }
-    100% {
-        top: 100%; /* Fuera de la pantalla por la parte inferior */
-    }
-}
-
-/* Estilo base para los botones de respuesta */
-.answer-btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Efecto hover */
-.answer-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Efecto al hacer clic */
-.answer-btn:active {
-    background-color: #003f7f;
-    transform: scale(0.95);
-}
-
-/* Reducir el tamaño del contenedor de preguntas */
-#questions {
-    max-width: 400px; /* Ajusta el ancho máximo */
-    margin: 0 auto; /* Centrar el contenedor */
-    padding: 10px; /* Espaciado interno */
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-}
-
-/* Reducir el tamaño de los botones de respuesta */
-.answer-btn {
-    width: 90%; /* Reducir el ancho */
-    margin: 5px auto; /* Espaciado entre botones y centrarlos */
-    padding: 8px; /* Reducir el espaciado interno */
-    font-size: 14px; /* Reducir el tamaño del texto */
-    border-radius: 8px; /* Bordes redondeados */
 }
