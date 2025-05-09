@@ -74,10 +74,12 @@ function endChallenge() {
   } else if (correctAnswers >= 45) {
     message += " Has ganado el trofeo de segundo lugar.";
     trophyIcon.innerHTML = "🥈"; // Trofeo de segundo lugar
+    trophyIcon.id = "trophy2";// Establecer el estilo de segundo lugar
     confetti.style.display = "block";
   } else if (correctAnswers >= 40) {
     message += " Has ganado el trofeo de tercer lugar.";
     trophyIcon.innerHTML = "🥉"; // Trofeo de tercer lugar
+    trophyIcon.id = "trophy2";// Establecer el estilo de tercer lugar
     confetti.style.display = "block";
   } else {
     message += " No obtuviste un trofeo.";
@@ -175,7 +177,7 @@ function resetRecord() {
   document.getElementById(
     "record"
   ).innerText = `Último récord: ${record} preguntas correctas`;
-  window.location.href = "challenge.html"; // Recarga la página
+  window.location.href = "/index.html"; // Recarga la página
 }
 
 // Activa o desactiva la música de fondo
